@@ -194,6 +194,7 @@ public class SchiffeMain {
         boolean ende = false;
         Scanner scan = new Scanner(System.in);
         do {
+            System.out.println();
             System.out.println("Bombe Spieler 1: ");
             int rowSpieler1 = scan.nextInt();
             int colSpieler1 = scan.nextInt();
@@ -211,7 +212,8 @@ public class SchiffeMain {
                 anzeigeFeld2[rowSpieler1][colSpieler1] = "\u001B[31m*\u001B[0m";
                 printAnzeigeFelder();
             }
-
+            
+            System.out.println();
             System.out.println("Bombe Spieler 2: ");
             int rowSpieler2 = scan.nextInt();
             int colSpieler2 = scan.nextInt();
