@@ -1,12 +1,13 @@
 - - Schiffeversenken - -
 
-    --Vorüberlegung--
-
 - Es wird ein Spielfeld (5x5)
-- Beide eine Anzahl x an Booten auf dem Spielfeld
+- Spieler wird begrüßt
+- abfrage, wie viele boote Platziert werden sollen
+- Beide eine Anzahl x an Booten auf dem Spielfeld platzieren
 - Ausgabe der Anzeigeansicht des Spielfeldes
 - Spieler 1 kann seine erste Bombe abschmeißen - wenn diese nicht im Spielfled ist, ist sein Gegenspieler an der Reihe
 - Spieler 2 platziert ebendfalls seine Bombe
 - wenn nicht getrofffen wird, soll das Feld mit "\*" versehen werden
 - bei Einem Treffer soll X - Vernichtet stehen
 - bis einer die anzahl x an Booten des Gegeners getroffen hat wird gespielt
+

@@ -19,7 +19,8 @@ public class SchiffeMain {
 
     private void run() { //"Main-Methodex" 
         init();
-        printAnzeigeFelder();
+        begruessung();
+        // printAnzeigeFelder();
         bootePlatzieren();
         printAnzeigeFelder();
         bombenPlatzieren();
@@ -84,8 +85,27 @@ public class SchiffeMain {
             System.out.println();
         }
         System.out.println("Spieler 2:");
+        System.out.println();
     }
     // Spielfeld
+
+    //Begruessung 
+    private void begruessung() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("  -- Schiffeversenken -- ");
+        System.out.println("Mit wie vielen Schiffen wollt ihr spielen: ");
+        boolean on = true; 
+        while (true) {
+            anzahlBoote = scan.nextInt();
+            if (anzahlBoote>25) {
+                System.out.println("So viele Boote passen nicht auf das Spielfeld. Maximale Anzahl: 25\nVersuche es erneut! ");
+            }
+            else{
+                break; 
+            }
+        }
+    }
+    //Begruessung 
 
     // Anzeige Feld  -- Funktion gleich den Spielfeldern
     private void anzeigeFelderInit() {
