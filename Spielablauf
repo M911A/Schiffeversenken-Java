@@ -1,16 +1,12 @@
 - - Schiffeversenken - -
 
-  erst soll Spieler 1 seine 5 Felder eingeben auf denen dann seine boote platziert sind ---
-  dann kommt Spiler 2 mit 5 Feldern ---
+    --Vorüberlegung--
 
-  jertzt sind die schiffe paltziert ---
-
-  dann soll abwechselnd immer ein spiler eine Bombe legen können --
-
-  es muss immer unter dem spielfeld eine Anzeige geben auf der Steht, wie viele schiffe pro Spieler noch stehen
-
-  übereinander beide 5x5 Spielfelder mit den Plaätzen, an den schon Bombe war mit \* die adneren mit 0 bei Treffer X
-
-  Spielfeld 5x5
-
-  7:30 Da sein
+- Es wird ein Spielfeld (5x5)
+- Beide eine Anzahl x an Booten auf dem Spielfeld
+- Ausgabe der Anzeigeansicht des Spielfeldes
+- Spieler 1 kann seine erste Bombe abschmeißen - wenn diese nicht im Spielfled ist, ist sein Gegenspieler an der Reihe
+- Spieler 2 platziert ebendfalls seine Bombe
+- wenn nicht getrofffen wird, soll das Feld mit "\*" versehen werden
+- bei Einem Treffer soll X - Vernichtet stehen
+- bis einer die anzahl x an Booten des Gegeners getroffen hat wird gespielt
