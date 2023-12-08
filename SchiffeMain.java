@@ -146,7 +146,7 @@ public class SchiffeMain {
         Scanner scan = new Scanner(System.in);
         int boote = 1;
         while (boote < anzahlBoote + 1) {
-            System.out.println("Boot " + boote + " platzieren (Reihe / Enter / Spalte): ");
+            System.out.println("Spieler 1: Boot " + boote + " platzieren (Reihe / Enter / Spalte): ");
             int row = scan.nextInt();
             int col = scan.nextInt();
 
@@ -157,14 +157,13 @@ public class SchiffeMain {
                 System.out.println("Ungültige Position. Bitte wähle andere Koordinaten.");
             }
         }
-        scan.close();
     }
 
     private void booteSpieler2() {//Platzieren der Botte von Spieler 2 
         Scanner scan = new Scanner(System.in);
         int boote = 1;
         while (boote < anzahlBoote + 1) {
-            System.out.println("Boot " + boote + " platzieren (Reihe / Enter /Spalte): ");
+            System.out.println("Spieler 2: Boot " + boote + " platzieren (Reihe / Enter /Spalte): ");
             int row = scan.nextInt();
             int col = scan.nextInt();
 
@@ -175,7 +174,6 @@ public class SchiffeMain {
                 System.out.println("Ungültige Position. Bitte wähle andere Koordinaten.");
             }
         }
-        scan.close();
     }
 
     private boolean positionVergebenSpieler1(int row, int col) { //Überprüfung ob eine gültige Position Verwende weird
@@ -205,8 +203,8 @@ public class SchiffeMain {
             if (bombeAufSpielfeld(rowSpieler1, colSpieler1)) {
                 if (bombeTrifftBootSpieler1(rowSpieler1, colSpieler1)) {
                     anzeigeFeld2[rowSpieler1][colSpieler1] = "\u001B[32mX\u001B[0m";
-                    printAnzeigeFelder();
                     uebrigeBooteSpieler2--;
+                    printAnzeigeFelder();
                     gefundenSpieler1++;
                     if (gefundenSpieler1 == anzahlBoote) {
                         printAnzeigeFelder();
@@ -230,8 +228,8 @@ public class SchiffeMain {
             if (bombeAufSpielfeld(rowSpieler2, colSpieler2)) {
                 if (bombeTrifftBootSpieler2(rowSpieler2, colSpieler2)) {
                     anzeigeFeld1[rowSpieler2][colSpieler2] = "\u001B[32mX\u001B[0m";
-                    printAnzeigeFelder();
                     uebrigeBooteSpieler1--;
+                    printAnzeigeFelder();
                     gefundenSpieler2++;
                     if (gefundenSpieler2 == anzahlBoote) {
                         printAnzeigeFelder();
@@ -264,5 +262,3 @@ public class SchiffeMain {
     }
     // Bombe Platzieren
 }
-
-//TODO: Uebrige Anzahl korrekt berechnen
