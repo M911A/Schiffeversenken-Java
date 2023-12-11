@@ -11,8 +11,5 @@
 - bei Einem Treffer soll X - Vernichtet stehen
 - bis einer die anzahl x an Booten des Gegeners getroffen hat wird gespielt
 
-
-
-
-    Aufgaben: 
-implementieren, dass Feld 1|1 auch dieses ist und nicht 2|2
+Aufagben: 
+----

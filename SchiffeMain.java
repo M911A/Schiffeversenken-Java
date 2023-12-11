@@ -22,9 +22,9 @@ public class SchiffeMain {
     private void run() { //"Main-Methodex" 
         init();
         begruessung();
-        // printAnzeigeFelder();
         bootePlatzieren();
         printAnzeigeFelder();
+        // printSpielfelder();
         bombenPlatzieren();
     }
 
@@ -93,23 +93,23 @@ public class SchiffeMain {
 
     //Begruessung 
     //Begruessung 
-private void begruessung() {
-    Scanner scan = new Scanner(System.in);
-    System.out.println("  -- Schiffeversenken -- ");
-    System.out.println("Mit wie vielen Schiffen wollt ihr spielen: ");
-    boolean on = true; 
-    while (true) {
-        anzahlBoote = scan.nextInt();
-        if (anzahlBoote > 25) {
-            System.out.println("So viele Boote passen nicht auf das Spielfeld. Maximale Anzahl: 25\nVersuche es erneut! ");
-        } else {
-            // Hier die Instanzvariablen für die übrigen Boote initialisieren
-            uebrigeBooteSpieler1 = anzahlBoote;
-            uebrigeBooteSpieler2 = anzahlBoote;
-            break; 
+    private void begruessung() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("  -- Schiffeversenken -- ");
+        System.out.println("Mit wie vielen Schiffen wollt ihr spielen: ");
+        boolean on = true; 
+        while (true) {
+            anzahlBoote = scan.nextInt();
+            if (anzahlBoote > 25) {
+                System.out.println("So viele Boote passen nicht auf das Spielfeld. Maximale Anzahl: 25\nVersuche es erneut! ");
+            } else {
+                // Hier die Instanzvariablen für die übrigen Boote initialisieren
+                uebrigeBooteSpieler1 = anzahlBoote;
+                uebrigeBooteSpieler2 = anzahlBoote;
+                break; 
+            }
         }
     }
-}
     //Begruessung 
 
     // Anzeige Feld  -- Funktion gleich den Spielfeldern
@@ -172,8 +172,8 @@ private void begruessung() {
         int boote = 1;
         while (boote < anzahlBoote + 1) {
             System.out.println("Spieler 1: Boot " + boote + " platzieren (Reihe / Enter / Spalte): ");
-            int row = scan.nextInt();
-            int col = scan.nextInt();
+            int row = scan.nextInt()-1; // Um Die Zählung der Felder bei 1 und nicht bei 0 beginnen zu lassen
+            int col = scan.nextInt()-1;
 
             if (positionVergebenSpieler1(row, col)) {
                 spielfeld1[row][col] = "B"; // Markierung der Position mit "B" für Boot im Spielfeld
@@ -189,8 +189,8 @@ private void begruessung() {
         int boote = 1;
         while (boote < anzahlBoote + 1) {
             System.out.println("Spieler 2: Boot " + boote + " platzieren (Reihe / Enter /Spalte): ");
-            int row = scan.nextInt();
-            int col = scan.nextInt();
+            int row = scan.nextInt()-1; // Um Die Zählung der Felder bei 1 und nicht bei 0 beginnen zu lassen
+            int col = scan.nextInt()-1;
 
             if (positionVergebenSpieler2(row, col)) {
                 spielfeld2[row][col] = "B"; // Markierung der Position mit "B" für Boot im Spielfeld
