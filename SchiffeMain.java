@@ -6,9 +6,11 @@ public class SchiffeMain {
     private String[][] spielfeld2 = new String[5][5];
     private String[][] anzeigeFeld1 = new String[5][5];
     private String[][] anzeigeFeld2 = new String[5][5];
-    int anzahlBoote = 2;
+    int anzahlBoote;
     int uebrigeBooteSpieler1 = anzahlBoote; 
     int uebrigeBooteSpieler2 = anzahlBoote; 
+    int trefferSpieler1 = 0;
+    int trefferSpieler2 = 0;
     
     public static void main(String[] args) {
         SchiffeMain main = new SchiffeMain();
@@ -135,7 +137,7 @@ public class SchiffeMain {
     }
 
     private void printAnzeigeFeld1(String[][] anzeigeFeld1) {
-        System.out.println("Spieler 1:\t Übrige Boote: " + uebrigeBooteSpieler1);
+        System.out.println("Spieler 1:\t Übrige Boote: " + uebrigeBooteSpieler1 + "\tTreffer: " + trefferSpieler1) ;
         for (String[] row : anzeigeFeld1) {
             for (String cell : row) {
                 System.out.print(cell + " ");
@@ -152,7 +154,7 @@ public class SchiffeMain {
             }
             System.out.println();
         }
-        System.out.println("Spieler 2:\t Übrige Boote: " + uebrigeBooteSpieler2);
+        System.out.println("Spieler 2:\t Übrige Boote: " + uebrigeBooteSpieler2  + "\tTreffer: " + trefferSpieler2);
     }
     // Annzeige Feld
 
@@ -224,11 +226,12 @@ public class SchiffeMain {
                 if (bombeTrifftBootSpieler1(rowSpieler1, colSpieler1)) {
                     anzeigeFeld2[rowSpieler1][colSpieler1] = "\u001B[32mX\u001B[0m";
                     uebrigeBooteSpieler2--;
+                    trefferSpieler1++; 
                     printAnzeigeFelder();
                     gefundenSpieler1++;
                     if (gefundenSpieler1 == anzahlBoote) {
                         printAnzeigeFelder();
-                        System.out.println("Spieler 1 hat gewonnen!");
+                        System.out.println("\u001B[32mSpieler 1 hat gewonnen!\u001B[0m");
                         break;
                     }
                 } else {
@@ -249,11 +252,12 @@ public class SchiffeMain {
                 if (bombeTrifftBootSpieler2(rowSpieler2, colSpieler2)) {
                     anzeigeFeld1[rowSpieler2][colSpieler2] = "\u001B[32mX\u001B[0m";
                     uebrigeBooteSpieler1--;
+                    trefferSpieler2++;
                     printAnzeigeFelder();
                     gefundenSpieler2++;
                     if (gefundenSpieler2 == anzahlBoote) {
                         printAnzeigeFelder();
-                        System.out.println("Spieler 2 hat gewonnen!");
+                        System.out.println("\u001B[32mSpieler 1 hat gewonnen!\u001B[0m\"");
                         break;
                     }
                 } else {

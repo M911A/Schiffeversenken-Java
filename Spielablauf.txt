@@ -11,3 +11,8 @@
 - bei Einem Treffer soll X - Vernichtet stehen
 - bis einer die anzahl x an Booten des Gegeners getroffen hat wird gespielt
 
+
+
+
+    Aufgaben: 
+Übrige Botte richtog berechen lassen 
