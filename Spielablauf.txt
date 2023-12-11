@@ -15,4 +15,4 @@
 
 
     Aufgaben: 
-Übrige Botte richtog berechen lassen 
+implementieren, dass Feld 1|1 auch dieses ist und nicht 2|2

@@ -92,21 +92,24 @@ public class SchiffeMain {
     // Spielfeld
 
     //Begruessung 
-    private void begruessung() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("  -- Schiffeversenken -- ");
-        System.out.println("Mit wie vielen Schiffen wollt ihr spielen: ");
-        boolean on = true; 
-        while (true) {
-            anzahlBoote = scan.nextInt();
-            if (anzahlBoote>25) {
-                System.out.println("So viele Boote passen nicht auf das Spielfeld. Maximale Anzahl: 25\nVersuche es erneut! ");
-            }
-            else{
-                break; 
-            }
+    //Begruessung 
+private void begruessung() {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("  -- Schiffeversenken -- ");
+    System.out.println("Mit wie vielen Schiffen wollt ihr spielen: ");
+    boolean on = true; 
+    while (true) {
+        anzahlBoote = scan.nextInt();
+        if (anzahlBoote > 25) {
+            System.out.println("So viele Boote passen nicht auf das Spielfeld. Maximale Anzahl: 25\nVersuche es erneut! ");
+        } else {
+            // Hier die Instanzvariablen für die übrigen Boote initialisieren
+            uebrigeBooteSpieler1 = anzahlBoote;
+            uebrigeBooteSpieler2 = anzahlBoote;
+            break; 
         }
     }
+}
     //Begruessung 
 
     // Anzeige Feld  -- Funktion gleich den Spielfeldern
@@ -225,7 +228,7 @@ public class SchiffeMain {
             if (bombeAufSpielfeld(rowSpieler1, colSpieler1)) {
                 if (bombeTrifftBootSpieler1(rowSpieler1, colSpieler1)) {
                     anzeigeFeld2[rowSpieler1][colSpieler1] = "\u001B[32mX\u001B[0m";
-                    uebrigeBooteSpieler2--;
+                    uebrigeBooteSpieler2 = uebrigeBooteSpieler2-1;
                     trefferSpieler1++; 
                     printAnzeigeFelder();
                     gefundenSpieler1++;
@@ -251,7 +254,7 @@ public class SchiffeMain {
             if (bombeAufSpielfeld(rowSpieler2, colSpieler2)) {
                 if (bombeTrifftBootSpieler2(rowSpieler2, colSpieler2)) {
                     anzeigeFeld1[rowSpieler2][colSpieler2] = "\u001B[32mX\u001B[0m";
-                    uebrigeBooteSpieler1--;
+                    uebrigeBooteSpieler1 = uebrigeBooteSpieler1-1;
                     trefferSpieler2++;
                     printAnzeigeFelder();
                     gefundenSpieler2++;
@@ -273,14 +276,26 @@ public class SchiffeMain {
         scan.close();
     }
 
-    private boolean bombeTrifftBootSpieler1(int row, int col) { //Überprüfen, ob Bombe Schwiff trifft 
-        return row >= 0 && row < spielfeld1.length && col >= 0 && col < spielfeld1[0].length
-                && spielfeld1[row][col].equals("B"); 
+    private boolean bombeTrifftBootSpieler1(int row, int col) {
+        if (row >= 0 && row < spielfeld1.length && col >= 0 && col < spielfeld1[0].length
+                && spielfeld1[row][col].equals("B")) {
+            spielfeld1[row][col] = "\u001B[32mX\u001B[0m"; // Markiere getroffenes Boot
+            // uebrigeBooteSpieler1--;
+            return true;
+        }
+        return false;
     }
-    private boolean bombeTrifftBootSpieler2(int row, int col) { //Überprüfen, ob Bombe Schwiff trifft 
-        return row >= 0 && row < spielfeld2.length && col >= 0 && col < spielfeld2[0].length
-        && spielfeld2[row][col].equals("B"); 
+    
+    private boolean bombeTrifftBootSpieler2(int row, int col) {
+        if (row >= 0 && row < spielfeld2.length && col >= 0 && col < spielfeld2[0].length
+                && spielfeld2[row][col].equals("B")) {
+            spielfeld2[row][col] = "\u001B[32mX\u001B[0m"; // Markiere getroffenes Boot
+            // uebrigeBooteSpieler2--;
+            return true;
+        }
+        return false;
     }
+    
     private boolean bombeAufSpielfeld(int row, int col) { //Überprüfen, ob Bombe auf Spielfeld
         return row >= 0 && row < spielfeld1.length && col >= 0 && col < spielfeld1[0].length;
     }
