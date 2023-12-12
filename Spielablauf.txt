@@ -12,4 +12,4 @@
 - bis einer die anzahl x an Booten des Gegeners getroffen hat wird gespielt
 
 Aufagben: 
-----
+    Berichtigung, der Einganbe 1|1 ist gleich 1|1
