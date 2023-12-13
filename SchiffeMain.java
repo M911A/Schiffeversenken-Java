@@ -172,8 +172,8 @@ public class SchiffeMain {
         int boote = 1;
         while (boote < anzahlBoote + 1) {
             System.out.println("Spieler 1: Boot " + boote + " platzieren (Reihe / Enter / Spalte): ");
-            int row = scan.nextInt()-1; // Um Die Zählung der Felder bei 1 und nicht bei 0 beginnen zu lassen
-            int col = scan.nextInt()-1;
+            int row = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
+            int col = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
 
             if (positionVergebenSpieler1(row, col)) {
                 spielfeld1[row][col] = "B"; // Markierung der Position mit "B" für Boot im Spielfeld
@@ -189,8 +189,8 @@ public class SchiffeMain {
         int boote = 1;
         while (boote < anzahlBoote + 1) {
             System.out.println("Spieler 2: Boot " + boote + " platzieren (Reihe / Enter /Spalte): ");
-            int row = scan.nextInt()-1; // Um Die Zählung der Felder bei 1 und nicht bei 0 beginnen zu lassen
-            int col = scan.nextInt()-1;
+            int row = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
+            int col = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
 
             if (positionVergebenSpieler2(row, col)) {
                 spielfeld2[row][col] = "B"; // Markierung der Position mit "B" für Boot im Spielfeld
@@ -223,8 +223,8 @@ public class SchiffeMain {
 
             //Spieler 2 Bombe platzieren 
             System.out.println("Bombe Spieler 1: ");
-            int rowSpieler1 = scan.nextInt();
-            int colSpieler1 = scan.nextInt();
+            int rowSpieler1 = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
+            int colSpieler1 = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
             if (bombeAufSpielfeld(rowSpieler1, colSpieler1)) {
                 if (bombeTrifftBootSpieler1(rowSpieler1, colSpieler1)) {
                     anzeigeFeld2[rowSpieler1][colSpieler1] = "\u001B[32mX\u001B[0m";
@@ -249,8 +249,8 @@ public class SchiffeMain {
             //Spieler 2 Bombe platzieren 
             System.out.println();
             System.out.println("Bombe Spieler 2: ");
-            int rowSpieler2 = scan.nextInt();
-            int colSpieler2 = scan.nextInt();
+            int rowSpieler2 = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
+            int colSpieler2 = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
             if (bombeAufSpielfeld(rowSpieler2, colSpieler2)) {
                 if (bombeTrifftBootSpieler2(rowSpieler2, colSpieler2)) {
                     anzeigeFeld1[rowSpieler2][colSpieler2] = "\u001B[32mX\u001B[0m";

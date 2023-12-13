@@ -12,4 +12,5 @@
 - bis einer die anzahl x an Booten des Gegeners getroffen hat wird gespielt
 
 Aufagben: 
-    Berichtigung, der Einganbe 1|1 ist gleich 1|1
+ - Spielr 2 darf nicht die Eingaben von Spieler 1 beim Schiffeplatzieren sehen 
+ 
