@@ -24,7 +24,7 @@ public class SchiffeMain {
         begruessung();
         bootePlatzieren();
         printAnzeigeFelder();
-        // printSpielfelder();
+        printSpielfelder();
         bombenPlatzieren();
     }
 
@@ -103,7 +103,7 @@ public class SchiffeMain {
             if (anzahlBoote > 25) {
                 System.out.println("So viele Boote passen nicht auf das Spielfeld. Maximale Anzahl: 25\nVersuche es erneut! ");
             } else {
-                // Hier die Instanzvariablen für die übrigen Boote initialisieren
+                // Instanzvariablen für  übrigen Boote initialisiert 
                 uebrigeBooteSpieler1 = anzahlBoote;
                 uebrigeBooteSpieler2 = anzahlBoote;
                 break; 
@@ -221,12 +221,12 @@ public class SchiffeMain {
         do {
             System.out.println();
 
-            //Spieler 2 Bombe platzieren 
+            //Spieler 1 Bombe platzieren 
             System.out.println("Bombe Spieler 1: ");
             int rowSpieler1 = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
             int colSpieler1 = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
             if (bombeAufSpielfeld(rowSpieler1, colSpieler1)) {
-                if (bombeTrifftBootSpieler1(rowSpieler1, colSpieler1)) {
+                if (bombeTrifftBootSpieler2(rowSpieler1, colSpieler1)) {
                     anzeigeFeld2[rowSpieler1][colSpieler1] = "\u001B[32mX\u001B[0m";
                     uebrigeBooteSpieler2 = uebrigeBooteSpieler2-1;
                     trefferSpieler1++; 
@@ -252,7 +252,7 @@ public class SchiffeMain {
             int rowSpieler2 = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
             int colSpieler2 = scan.nextInt()-1; // Um Zählung von 1 zu beginnen 
             if (bombeAufSpielfeld(rowSpieler2, colSpieler2)) {
-                if (bombeTrifftBootSpieler2(rowSpieler2, colSpieler2)) {
+                if (bombeTrifftBootSpieler1(rowSpieler2, colSpieler2)) {
                     anzeigeFeld1[rowSpieler2][colSpieler2] = "\u001B[32mX\u001B[0m";
                     uebrigeBooteSpieler1 = uebrigeBooteSpieler1-1;
                     trefferSpieler2++;
@@ -260,7 +260,7 @@ public class SchiffeMain {
                     gefundenSpieler2++;
                     if (gefundenSpieler2 == anzahlBoote) {
                         printAnzeigeFelder();
-                        System.out.println("\u001B[32mSpieler 1 hat gewonnen!\u001B[0m\"");
+                        System.out.println("\u001B[32mSpieler 1 hat gewonnen!\u001B[0m");
                         break;
                     }
                 } else {

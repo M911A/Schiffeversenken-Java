@@ -12,5 +12,4 @@
 - bis einer die anzahl x an Booten des Gegeners getroffen hat wird gespielt
 
 Aufagben: 
- - Spielr 2 darf nicht die Eingaben von Spieler 1 beim Schiffeplatzieren sehen 
- 
+ - Spielr 2 darf nicht die Eingaben von Spieler 1 beim Schiffeplatzieren sehen !!!
