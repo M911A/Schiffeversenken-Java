@@ -24,7 +24,7 @@ public class SchiffeMain {
         begruessung();
         bootePlatzieren();
         printAnzeigeFelder();
-        printSpielfelder();
+        // printSpielfelder();
         bombenPlatzieren();
     }
 
@@ -140,6 +140,8 @@ public class SchiffeMain {
     }
 
     private void printAnzeigeFeld1(String[][] anzeigeFeld1) {
+        System.out.println("  -- Schiffeversenken -- ");
+        System.out.println();
         System.out.println("Spieler 1:\t Übrige Boote: " + uebrigeBooteSpieler1 + "\tTreffer: " + trefferSpieler1) ;
         for (String[] row : anzeigeFeld1) {
             for (String cell : row) {
@@ -164,7 +166,9 @@ public class SchiffeMain {
     // Boote platzieren
     private void bootePlatzieren() { //Auslagern von 2 Methoden zu einer
         booteSpieler1();
+        clearConsole();
         booteSpieler2();
+        clearConsole();
     }
 
     private void booteSpieler1() {//Platzieren der Botte von Spieler 1 
@@ -300,4 +304,16 @@ public class SchiffeMain {
         return row >= 0 && row < spielfeld1.length && col >= 0 && col < spielfeld1[0].length;
     }
     // Bombe Platzieren
+
+
+    //Clear die Konsole (nicht mein Code)
+    public void clearConsole() {
+        try {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    //Clear die Konsole (nicht mein Code)
 }
