@@ -12,4 +12,4 @@
 - bis einer die anzahl x an Booten des Gegeners getroffen hat wird gespielt
 
 Aufagben: 
-    - Nach einegabe Boote Spielr 1 clear nach spielr 2 auch
+    ---
